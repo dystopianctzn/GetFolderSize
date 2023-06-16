@@ -1,9 +1,13 @@
 ﻿
 
-Console.WriteLine("Введите путь к вашей папке в формате C:\\...\\...");
+Console.Write("Введите путь к вашей папке в формате C:\\...\\... ");
 string folderPath = Console.ReadLine();
 
-Console.WriteLine("Размер папки {0} байт.", DirSize(new DirectoryInfo(@folderPath))); //путь
+long folderSize = DirSize(new DirectoryInfo(@folderPath));
+if (folderSize == 0)
+    Console.WriteLine("Папка пустая или файлы в ней ничего не весят");
+else
+    Console.WriteLine("Размер папки {0} байт.", folderSize);
 
 
 static long DirSize(DirectoryInfo targetFolder)
