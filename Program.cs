@@ -1,7 +1,9 @@
 ﻿
 
+Console.WriteLine("Введите путь к вашей папке в формате C:\\...\\...");
+string folderPath = Console.ReadLine();
 
-Console.WriteLine("Размер папки {0} байт.", DirSize(new DirectoryInfo(@"C:\Riot Games"))); //путь
+Console.WriteLine("Размер папки {0} байт.", DirSize(new DirectoryInfo(@folderPath))); //путь
 
 
 static long DirSize(DirectoryInfo targetFolder)
